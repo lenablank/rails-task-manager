@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
-  def index # all tasks
-    @tasks = Task.all
+  def index
+    @tasks = Task.all # display all tasks
   end
 
   def new
@@ -11,6 +11,7 @@ class TasksController < ApplicationController
   end
 
   def show
+    @task = Task.find(params[:id])
   end
 
   def edit
