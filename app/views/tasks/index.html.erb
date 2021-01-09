@@ -6,11 +6,17 @@
         <div>
           <i class="far fa-check-square"></i>
           <%= link_to task.title, task_path(task) %>
+          <%= link_to task_path(task), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="far fa-trash-alt"></i>
+        <% end %>
         </div>
       <% else %>
         <div>
           <i class="far fa-square"></i>
           <%= link_to task.title, task_path(task) %>
+          <%= link_to task_path(task), method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="far fa-trash-alt"></i>
+          <% end %>
         </div>
       <% end %>
     <% end %>
